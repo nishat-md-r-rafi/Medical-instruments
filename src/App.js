@@ -4,6 +4,8 @@ import Home from "./pages/Home/Home/Home";
 import Header from "./pages/shared/Header/Header";
 import MyOrders from "./pages/DashBoard/MyOrders/MyOrders";
 import Pay from "./pages/DashBoard/Pay/Pay";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Login from "./pages/Login/Login/Login";
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
       <Router>
         <Header></Header>
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Home></Home>
           </Route>
           <Route path="/home">
@@ -22,6 +24,9 @@ function App() {
           </Route>
           <Route path="/pay">
             <Pay></Pay>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
           </Route>
         </Switch>
       </Router>
