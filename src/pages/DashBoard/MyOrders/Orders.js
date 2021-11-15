@@ -41,7 +41,7 @@ function Orders({ handleOpen, handleClose, open, info }) {
     console.log(orderInformation);
 
     // send to the server
-    fetch("http://localhost:5000/orders", {
+    fetch("https://medieye.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

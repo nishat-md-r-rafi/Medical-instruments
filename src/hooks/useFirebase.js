@@ -107,7 +107,7 @@ const useFirebase = () => {
   const saveUser = (email, displayName, method) => {
     console.log("called");
     const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+    fetch("https://medieye.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
