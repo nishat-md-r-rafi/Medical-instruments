@@ -19,7 +19,7 @@ function Footer(props) {
               marginTop: "-50px",
             }}
           >
-            Susrusha
+            MediEye
           </h1>
           <Container>
             <Row>

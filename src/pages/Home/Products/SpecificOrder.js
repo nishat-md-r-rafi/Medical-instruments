@@ -13,7 +13,7 @@ import Paper from "@mui/material/Paper";
 function SpecificOrder(props) {
   const { user } = useAuth();
   const [userOrders, setUserOrders] = useState([]);
-  const url = `https://medieye.herokuapp.com/?email=${user.email}`;
+  const url = `https://medieye.herokuapp.com/orders?email=${user.email}`;
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())

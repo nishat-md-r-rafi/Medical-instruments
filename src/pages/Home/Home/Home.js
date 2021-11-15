@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../Footer/Footer";
 import Banner from "../Banner/Banner";
 import News from "../News/News";
 import Products from "../Products/Products";
@@ -11,6 +12,7 @@ function Home(props) {
       <Products></Products>
       <News></News>
       <Reviews></Reviews>
+      <Footer></Footer>
     </div>
   );
 }
