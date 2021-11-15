@@ -10,6 +10,7 @@ import Explore from "./pages/Explore/Explore";
 import AuthProvider from "./contexts/AuthProvider";
 import Register from "./pages/Login/Register/Register";
 import Orders from "./pages/DashBoard/MyOrders/Orders";
+import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -39,9 +40,9 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route path="/order">
+            <PrivateRoute path="/order">
               <Orders></Orders>
-            </Route>
+            </PrivateRoute>
           </Switch>
         </Router>
       </AuthProvider>

@@ -27,7 +27,7 @@ function Orders({ handleOpen, handleClose, open, info }) {
     const field = e.target.name;
     const value = e.target.value;
     const newInfo = { ...orderInfo };
-    newInfo[field] = value;
+    newInfo[field] = value.toLowerCase();
     setOrderInfo(newInfo);
     console.log(orderInfo);
   };

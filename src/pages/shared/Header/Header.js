@@ -1,8 +1,10 @@
 import React from "react";
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 function Header(props) {
   const { user, signInUsingGoogle, logOut } = useAuth();
+  console.log(user.displayName);
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -15,26 +17,29 @@ function Header(props) {
             MediEye
           >
             <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/myOrders">MyOrders</Nav.Link>
             <Nav.Link href="/pay">Pay</Nav.Link>
+            <Nav.Link href="/explore">Explore</Nav.Link>
 
             {user?.email ? (
-              <button
-                style={{
-                  backgroundColor: "transparent",
-                  color: "black",
-                  border: "none",
-                }}
-                className="btn btn-primary"
-                onClick={logOut}
-              >
-                LogOut
-              </button>
+              <div style={{ display: "flex" }}>
+                <button
+                  style={{
+                    backgroundColor: "transparent",
+                    color: "black",
+                    border: "none",
+                  }}
+                  className="btn btn-primary"
+                  onClick={logOut}
+                >
+                  LogOut
+                </button>
+                <Nav.Link href="/myOrders">DashBoard</Nav.Link>
+              </div>
             ) : (
               <Nav.Link href="/login">Login</Nav.Link>
             )}
-            <Nav.Link href="#" disabled>
-              Link
+            <Nav.Link className="text-md-right" href="#" disabled>
+              {user.displayName}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
