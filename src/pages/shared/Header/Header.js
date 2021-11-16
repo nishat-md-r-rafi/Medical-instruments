@@ -17,7 +17,6 @@ function Header(props) {
             MediEye
           >
             <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/pay">Pay</Nav.Link>
             <Nav.Link href="/explore">Explore</Nav.Link>
 
             {user?.email ? (
@@ -34,6 +33,8 @@ function Header(props) {
                   LogOut
                 </button>
                 <Nav.Link href="/myOrders">DashBoard</Nav.Link>
+                <Nav.Link href="/review">Reviews</Nav.Link>
+                <Nav.Link href="/pay">Pay</Nav.Link>
               </div>
             ) : (
               <Nav.Link href="/login">Login</Nav.Link>
