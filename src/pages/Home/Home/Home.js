@@ -3,7 +3,7 @@ import Footer from "../../Footer/Footer";
 import Banner from "../Banner/Banner";
 import News from "../News/News";
 import Products from "../Products/Products";
-import Reviews from "../Reviews/Reviews";
+import ShowReviews from "../Reviews/ShowReviews";
 
 function Home(props) {
   return (
@@ -11,7 +11,7 @@ function Home(props) {
       <Banner></Banner>
       <Products></Products>
       <News></News>
-      <Reviews></Reviews>
+      <ShowReviews></ShowReviews>
       <Footer></Footer>
     </div>
   );

@@ -15,6 +15,13 @@ function Reviews(props) {
   };
 
   const handleReviewSubmit = (e) => {
+    fetch("https://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(review),
+    }).then();
     e.preventDefault();
     e.target.reset();
   };
