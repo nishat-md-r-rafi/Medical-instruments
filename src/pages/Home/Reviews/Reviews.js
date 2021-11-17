@@ -1,9 +1,11 @@
 import { TextField } from "@mui/material";
 import React from "react";
 import { useState } from "react";
+import useAuth from "../../../hooks/useAuth";
 
 function Reviews(props) {
   const [review, setReview] = useState({});
+  const { user } = useAuth();
 
   const handleBlur = (e) => {
     const field = e.target.name;
@@ -13,9 +15,10 @@ function Reviews(props) {
     setReview(newReview);
     console.log(review);
   };
+  console.log(user);
 
   const handleReviewSubmit = (e) => {
-    fetch("https://localhost:5000/reviews", {
+    fetch("https://medieye.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -38,6 +41,17 @@ function Reviews(props) {
           label="Your Review"
           variant="outlined"
           name="review"
+        />
+        <br></br>
+        <TextField
+          fullWidth
+          margin="dense"
+          onBlur={handleBlur}
+          id="outlined-basic"
+          label="Name"
+          variant="outlined"
+          name="Name"
+          defaultValue={user.displayName}
         />
         <br></br>
         <TextField

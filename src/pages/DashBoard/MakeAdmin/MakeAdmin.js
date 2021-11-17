@@ -4,14 +4,19 @@ import { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 
 function MakeAdmin(props) {
-  const { user } = useAuth();
   const [email, setEmail] = useState("");
+  const { token } = useAuth();
+  const handleOnBlur = (e) => {
+    setEmail(e.target.value);
+  };
 
+  // http://localhost:5000/users/admin
   const handleSubmit = (e) => {
     const user = { email };
-    fetch("http://localhost:5000/users/admin", {
+    fetch("https://medieye.herokuapp.com/users/admin", {
       method: "PUT",
       headers: {
+        authorization: `Bearer ${token}`,
         "content-type": "application/json",
       },
       body: JSON.stringify(user),
@@ -26,14 +31,12 @@ function MakeAdmin(props) {
     e.preventDefault();
     e.target.reset();
   };
-  const handleOnBlur = (e) => {
-    setEmail(e.target.value);
-  };
   return (
     <div>
       <h3>Make Admin</h3>
       <form onSubmit={handleSubmit}>
         <TextField
+          sx={{ width: "50%" }}
           onBlur={handleOnBlur}
           id="standard-basic"
           label="Enter Email"
